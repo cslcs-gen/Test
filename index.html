@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BuildJoyNow — Product &amp; Indie AI Builder</title>
+<meta name="description" content="Portfolio of BuildJoyNow: a solo product manager and indie AI builder shipping small, useful products fast.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --ink:#1C2321;
+    --ink-soft:#4A524F;
+    --teal:#2D5F5D;
+    --teal-deep:#1F4442;
+    --gold:#C99A3A;
+    --line:#E1DDD3;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Newsreader', serif; font-weight:500; color:var(--ink);}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  /* Header / nav */
+  header{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; justify-content:space-between; align-items:center;}
+  .brand{font-family:'Newsreader', serif; font-size:1.15rem; font-weight:600; letter-spacing:0.02em;}
+  .brand span{color:var(--teal);}
+  nav a{
+    margin-left:26px; text-decoration:none; font-size:0.92rem; color:var(--ink-soft);
+    border-bottom:1px solid transparent; padding-bottom:3px; transition:border-color .2s, color .2s;
+  }
+  nav a:hover{color:var(--ink); border-color:var(--gold);}
+
+  /* Hero */
+  .hero{padding:76px 0 64px; opacity:0; transform:translateY(14px); animation:rise .7s ease-out .1s forwards;}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+  .hero p.kicker{color:var(--teal); font-size:0.95rem; font-weight:500; margin-bottom:14px;}
+  .hero h1{font-size:2.6rem; line-height:1.18; max-width:640px;}
+  .hero h1 em{font-style:italic; color:var(--teal-deep);}
+  .hero p.lede{
+    margin-top:22px; max-width:520px; color:var(--ink-soft); font-size:1.05rem;
+  }
+  .hero .stats{display:flex; gap:36px; margin-top:40px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:'Newsreader', serif; font-size:2rem; color:var(--ink); font-weight:600;}
+  .stat span{font-size:0.85rem; color:var(--ink-soft);}
+
+  /* Section shared */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:30px; flex-wrap:wrap; gap:8px;}
+  .section-head h2{font-size:1.5rem;}
+  .section-head p{color:var(--ink-soft); font-size:0.92rem; max-width:360px;}
+
+  /* Featured project */
+  .featured{
+    background:var(--card); border:1px solid var(--line); border-radius:6px;
+    padding:30px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:start;
+  }
+  .featured .tag{
+    display:inline-block; font-size:0.75rem; color:var(--gold); border:1px solid var(--gold);
+    padding:2px 9px; border-radius:20px; margin-bottom:12px;
+  }
+  .featured h3{font-size:1.35rem; margin-bottom:8px;}
+  .featured p{color:var(--ink-soft); max-width:460px;}
+  .featured a.link{
+    white-space:nowrap; font-size:0.9rem; text-decoration:none; color:var(--teal-deep);
+    border-bottom:1px solid var(--teal-deep); padding-bottom:2px;
+  }
+
+  /* Project grid */
+  .grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px;}
+  .proj{
+    border:1px solid var(--line); border-radius:6px; padding:22px; background:var(--card);
+  }
+  .proj h3{font-size:1.08rem; margin-bottom:8px;}
+  .proj p{color:var(--ink-soft); font-size:0.92rem;}
+  .proj a{
+    display:inline-block; margin-top:12px; font-size:0.85rem; text-decoration:none;
+    color:var(--teal); border-bottom:1px solid transparent;
+  }
+  .proj a:hover{border-color:var(--teal);}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px;}
+  .about-grid p{color:var(--ink-soft); margin-bottom:14px;}
+  .stack-list{list-style:none;}
+  .stack-list li{
+    padding:10px 0; border-bottom:1px solid var(--line); font-size:0.92rem;
+    display:flex; justify-content:space-between;
+  }
+  .stack-list li:last-child{border-bottom:none;}
+  .stack-list span{color:var(--ink-soft);}
+
+  /* Footer */
+  footer{padding:44px 0 60px;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  footer h2{font-size:1.4rem; max-width:380px;}
+  .contact-links{display:flex; gap:22px;}
+  .contact-links a{text-decoration:none; font-size:0.92rem; color:var(--teal-deep); border-bottom:1px solid var(--teal-deep); padding-bottom:2px;}
+  .fine{margin-top:34px; font-size:0.8rem; color:var(--ink-soft);}
+
+  @media (max-width: 720px){
+    .hero h1{font-size:2rem;}
+    .about-grid{grid-template-columns:1fr;}
+    .grid{grid-template-columns:1fr;}
+    .featured{grid-template-columns:1fr;}
+    nav a{margin-left:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Build<span>Joy</span>Now</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Product Manager · Indie AI Builder · Singapore</p>
+    <h1>I turn small ideas into <em>shipped</em> products, usually before the week is out.</h1>
+    <p class="lede">
+      I'm a product manager by day and a solo builder the rest of the time — designing,
+      building and deploying AI-powered web apps end to end, from a phone as often as a laptop.
+    </p>
+    <div class="stats">
+      <div class="stat"><b>10+</b><span>products shipped</span></div>
+      <div class="stat"><b>1</b><span>person team</span></div>
+      <div class="stat"><b>Mobile-first</b><span>build process</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured build</h2>
+      <p>The one I'd point you to first.</p>
+    </div>
+    <div class="featured">
+      <div>
+        <span class="tag">Hackathon winner — "Really Can Work!" Award</span>
+        <h3>ARIA — voice AI for public health</h3>
+        <p>A Next.js voice portal that lets people ask health questions out loud and get clear,
+          spoken answers back. Built with Claude for reasoning and ElevenLabs for voice,
+          backed by Upstash Redis and a Telegram bot for operations.</p>
+      </div>
+      <a class="link" href="https://aria-voice-seven.vercel.app" target="_blank" rel="noopener">View project →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Also shipped</h2>
+      <p>Smaller products, each built and deployed solo, end to end.</p>
+    </div>
+    <div class="grid">
+      <div class="proj">
+        <h3>LinkForge</h3>
+        <p>A daily word-connections puzzle game with a global leaderboard, milestone badges and shareable results.</p>
+        <a href="https://linkforge.buildjoynow.com" target="_blank" rel="noopener">linkforge.buildjoynow.com →</a>
+      </div>
+      <div class="proj">
+        <h3>DORA</h3>
+        <p>A hands-on learning app that walks through four stages of agentic AI, from single tool calls to multi-agent orchestration.</p>
+        <a href="https://dora.buildjoynow.com" target="_blank" rel="noopener">dora.buildjoynow.com →</a>
+      </div>
+      <div class="proj">
+        <h3>Happy</h3>
+        <p>A private journaling wall with AI-generated insights on mood and writing patterns over time.</p>
+        <a href="https://happy.buildjoynow.com" target="_blank" rel="noopener">happy.buildjoynow.com →</a>
+      </div>
+      <div class="proj">
+        <h3>Yield</h3>
+        <p>A stock market analysis tool covering eight country markets, with AI-generated trend reads.</p>
+        <a href="https://yield.buildjoynow.com" target="_blank" rel="noopener">yield.buildjoynow.com →</a>
+      </div>
+      <div class="proj">
+        <h3>FlowMind KB</h3>
+        <p>A community knowledge base for AI workflow automation — n8n, MCP, RAG and autonomous agents.</p>
+        <a href="https://flowmind.buildjoynow.com" target="_blank" rel="noopener">flowmind.buildjoynow.com →</a>
+      </div>
+      <div class="proj">
+        <h3>The Prompt Catalog</h3>
+        <p>A prompt generator paired with a free-tier library of ready-to-use prompts.</p>
+        <a href="https://prompts.buildjoynow.com" target="_blank" rel="noopener">prompts.buildjoynow.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>By day, I'm a product manager working on AI solutions for healthcare regulation
+          and enforcement. Outside of that, I run BuildJoyNow — an AI consulting and indie
+          product practice where I design, build and ship small web apps on my own.</p>
+        <p>Most of what I build starts and gets iterated on from my phone before it ever
+          touches a laptop, which shapes how I think about interfaces, speed and
+          keeping things simple enough to actually finish.</p>
+      </div>
+      <ul class="stack-list">
+        <li>Frontend <span>HTML / CSS / JS, React + Vite</span></li>
+        <li>Hosting <span>GitHub Pages, Cloudflare</span></li>
+        <li>Backend <span>Cloudflare Workers</span></li>
+        <li>AI <span>Claude, Gemini, ElevenLabs</span></li>
+        <li>Process <span>Solo, mobile-first, ship weekly</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Building something? Let's talk.</h2>
+      <div class="fine">BuildJoyNow · Singapore</div>
+    </div>
+    <div class="contact-links">
+      <a href="https://buildjoynow.com" target="_blank" rel="noopener">buildjoynow.com</a>
+      <a href="https://github.com/cslcs-gen" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
